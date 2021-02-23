@@ -2,6 +2,12 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  ssr: false,
+
+  router: {
+    middleware: ['authenticated']
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'vue-vuex-sample',
@@ -14,12 +20,17 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700;900&display=swap'
+      }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    './assets/app.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
